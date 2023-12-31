@@ -1,0 +1,9 @@
+.my-component {
+  --rmsc-main: #4285f4;
+}
+
+.my-component * {
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+

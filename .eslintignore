@@ -1,0 +1,13 @@
+**/node_modules/*
+**/out/*
+.eslintcache
+public
+*.css
+
+package-lock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+.DS_Store
+
+!.storybook
