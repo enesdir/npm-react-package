@@ -4,7 +4,7 @@
 	"typescript.preferences.importModuleSpecifier": "relative",
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"typescript.tsdk": "./node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
+	"typescript.enablePromptUseWorkspaceTsdk": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"typescript.suggest.completeFunctionCalls": true,
 	"eslint.lintTask.enable": true,
@@ -17,8 +17,8 @@
 	"editor.detectIndentation": false,
 	"editor.formatOnSave": true,
 	"editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit"
-  },
+		"source.organizeImports": "explicit"
+	},
 	"workbench.editor.labelFormat": "short",
 	"prettier.requireConfig": true,
 	"editor.quickSuggestions": {
@@ -51,5 +51,5 @@
 		"**/.git/objects/**": true,
 		"**/.git/subtree-cache/**": true,
 		"**/node_modules/*/**": true
-	},
+	}
 }

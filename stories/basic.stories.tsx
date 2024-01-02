@@ -1,16 +1,17 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { MyComponent } from '../src/MyComponent';
+import { Meta, StoryObj } from '@storybook/react'
+
+import { MyComponent } from '../src/MyComponent'
 
 const meta: Meta<typeof MyComponent> = {
-  title: 'UI/MyComponent',
-  component: MyComponent,
-};
-export default meta;
+	title: 'UI/MyComponent',
+	component: MyComponent,
+}
+export default meta
 
-type Story = StoryObj<typeof MyComponent>;
+type Story = StoryObj<typeof MyComponent>
 
 export const Example: Story = {
-  args: {
-    text: 'Try Me!',
-  },
-};
+	args: {
+		text: 'Try Me!',
+	},
+}
