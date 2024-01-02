@@ -1,3 +1,3 @@
-export type MyComponentProps= {
-  text:string
+export type MyComponentProps = {
+	text: string
 }

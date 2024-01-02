@@ -34,9 +34,12 @@ stories
 storybook-static/
 
 # other
-.czrc
+.husky
 .github
+.czrc
+.nvmrc
 .vscode
+.versionrc
 CODE_OF_CONDUCT.md
 .markdownlint.json
 .lintstagedrc.cjs
@@ -54,3 +57,5 @@ CODE_OF_CONDUCT.md
 # source
 src
 tsconfig.json
+tsup.config.ts
+

@@ -27,5 +27,13 @@
 		"jsx": "react-jsx"
 	},
 	"exclude": ["dist", "node_modules"],
-	"include": ["."]
+	"include": [
+		".storybook/**/*.tsx",
+		".storybook/**/*.ts",
+		".eslintrc.cjs",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.cjs",
+		"**/*.mjs"
+	]
 }

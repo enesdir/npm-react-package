@@ -18,21 +18,24 @@
 		}
 	],
 	"license": "MIT",
+	"engines": {
+		"node": ">=16.0.0"
+	},
 	"main": "./dist/index.js",
-	"module": "./dist/index.mjs",
+	"module": "./dist/esm/index.js",
 	"exports": {
 		".": {
 			"require": "./dist/index.js",
-			"import": "./dist/index.mjs",
-			"types": "./dist/index.d.ts"
+			"import": "./dist/esm/index.js",
+			"types": "./dist/index.d.mts"
 		}
 	},
 	"types": "./dist/index.d.ts",
 	"files": [
+		"LICENSE.md",
 		"dist/**",
 		"package.json",
-		"README.md",
-		"LICENSE"
+		"README.md"
 	],
 	"keywords": [
 		"react",
@@ -41,9 +44,9 @@
 		"lightweight"
 	],
 	"scripts": {
-		"build": "tsup ./src/index.ts",
+		"build": "tsup",
 		"build-storybook": "build-storybook",
-		"dev": "tsup ./src/index.ts --watch",
+		"dev": "tsup --watch",
 		"lint": "eslint src --fix --cache",
 		"lint-staged": "lint-staged",
 		"prepare": "husky install",
@@ -51,11 +54,13 @@
 		"release": "dotenv -e HUSKY=0 commit-and-tag-version",
 		"size": "size-limit",
 		"storybook": "storybook dev -p 6006",
-		"test": "vitest"
+		"test": "vitest",
+		"test:ci": "vitest run --coverage",
+		"type-check": "tsc"
 	},
 	"peerDependencies": {
-		"react": "^16 || ^17 || ^18",
-		"react-dom": "^16 || ^17 || ^18"
+		"react": "^17 || ^18",
+		"react-dom": "^17 || ^18"
 	},
 	"dependencies": {},
 	"devDependencies": {
@@ -65,28 +70,37 @@
 		"@commitlint/prompt-cli": "^18.4.3",
 		"@ianvs/prettier-plugin-sort-imports": "^4.1.1",
 		"@size-limit/preset-small-lib": "^11.0.1",
-		"@storybook/addon-essentials": "^7.6.6",
-		"@storybook/addon-interactions": "^7.6.6",
-		"@storybook/addon-links": "^7.6.6",
-		"@storybook/blocks": "^7.6.6",
-		"@storybook/builder-vite": "^7.6.6",
-		"@storybook/react": "^7.6.6",
-		"@storybook/react-vite": "^7.6.6",
+		"@storybook/addon-essentials": "^7.6.7",
+		"@storybook/addon-interactions": "^7.6.7",
+		"@storybook/addon-links": "^7.6.7",
+		"@storybook/blocks": "^7.6.7",
+		"@storybook/builder-vite": "^7.6.7",
+		"@storybook/react": "^7.6.7",
+		"@storybook/react-vite": "^7.6.7",
 		"@storybook/testing-library": "^0.2.2",
+		"@testing-library/jest-dom": "^6.1.6",
 		"@testing-library/react": "^14.1.2",
 		"@types/react": "^18.2.46",
 		"@types/react-dom": "^18.2.18",
-		"@typescript-eslint/eslint-plugin": "^6.16.0",
-		"@typescript-eslint/parser": "^6.16.0",
+		"@typescript-eslint/eslint-plugin": "^6.17.0",
+		"@typescript-eslint/parser": "^6.17.0",
+		"@vitest/coverage-v8": "^1.1.1",
 		"commit-and-tag-version": "^12.0.0",
 		"commitizen": "^4.3.0",
 		"commitlint": "^18.4.3",
 		"dotenv-cli": "^7.3.0",
 		"eslint": "8.56.0",
-		"eslint-plugin-prettier": "^5.1.2",
-		"eslint-plugin-react": "^7.33.2",
-		"eslint-plugin-storybook": "^0.6.15",
-		"eslint-plugin-unused-imports": "^3.0.0",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-import": "2.29.1",
+		"eslint-plugin-jsx-a11y": "6.8.0",
+		"eslint-plugin-prefer-arrow": "1.2.3",
+		"eslint-plugin-prettier": "5.1.2",
+		"eslint-plugin-react": "7.33.2",
+		"eslint-plugin-react-hooks": "4.6.0",
+		"eslint-plugin-sort-class-members": "^1.19.0",
+		"eslint-plugin-storybook": "0.6.15",
+		"eslint-plugin-typescript-sort-keys": "3.1.0",
+		"eslint-plugin-unused-imports": "3.0.0",
 		"husky": "^8.0.3",
 		"jsdom": "^23.0.1",
 		"lint-staged": "^15.2.0",
@@ -99,10 +113,13 @@
 		"react-dom": "^18.2.0",
 		"react-test-renderer": "18.2.0",
 		"size-limit": "^11.0.1",
-		"storybook": "^7.6.6",
+		"storybook": "^7.6.7",
 		"tsup": "^8.0.1",
 		"typescript": "^5.3.3",
 		"vitest": "^1.1.1"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"browserslist": [
 		"defaults",

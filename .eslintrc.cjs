@@ -4,17 +4,40 @@
  */
 
 /** @type {import('eslint').Linter.Config} */
+// eslint-disable-next-line no-undef
 module.exports = {
 	root: true,
 	env: {
 		browser: true,
 		es2021: true,
-		node: true,
+		jest: true,
 	},
 	parser: '@typescript-eslint/parser',
-	plugins: ['@typescript-eslint', 'prettier'],
+	parserOptions: {
+		ecmaFeatures: {
+			jsx: true,
+		},
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+	},
+	settings: {
+		react: {
+			version: 'detect',
+		},
+	},
+	plugins: [
+		'react',
+		'@typescript-eslint',
+		'typescript-sort-keys',
+		'unused-imports',
+		'prettier',
+		'prefer-arrow',
+		'sort-class-members',
+	],
 	extends: [
 		'eslint:recommended',
+		'plugin:react/recommended',
+		'prettier',
 		'plugin:@typescript-eslint/eslint-recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:react/recommended',
@@ -43,15 +66,46 @@ module.exports = {
 			},
 		],
 		'no-useless-escape': 'off',
+		'import/extensions': 'off',
+		'import/no-extraneous-dependencies': 'off',
+		'import/no-unresolved': 'off',
+		'import/prefer-default-export': 'off',
+		'no-nested-ternary': 'off',
+		'no-plusplus': 'off',
+		'no-unused-vars': 'off',
+		'no-use-before-define': 'off',
 		'prettier/prettier': 'error',
-		'react/display-name': 'off',
-		'react/jsx-key': 'off',
-		'react/no-children-prop': 'off',
-		'react/prop-types': 'off',
-	},
-	settings: {
-		react: {
-			version: 'detect',
-		},
+		'react/destructuring-assignment': 'off',
+		'react/function-component-definition': 'off',
+		'react/jsx-filename-extension': 'off',
+		'react/jsx-props-no-spreading': 'off',
+		'react/require-default-props': 'off',
+		'react/react-in-jsx-scope': 'off',
+		'typescript-sort-keys/interface': 'error',
+		'typescript-sort-keys/string-enum': 'error',
+		'unused-imports/no-unused-imports': 'error',
+		'prefer-arrow/prefer-arrow-functions': [
+			'error',
+			{
+				disallowPrototype: true,
+				singleReturnOnly: true,
+				classPropertiesAllowed: false,
+			},
+		],
+		'sort-class-members/sort-class-members': [
+			'error',
+			{
+				order: [
+					'[static-properties]',
+					'[properties]',
+					'[conventional-private-properties]',
+					'constructor',
+					'[static-methods]',
+					'[methods]',
+					'[conventional-private-methods]',
+				],
+				accessorPairPositioning: 'getThenSet',
+			},
+		],
 	},
 }
