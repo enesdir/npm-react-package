@@ -22,6 +22,7 @@ yarn-error.log*
 
 # Vitest
 **/vitest.config.ts
+**/coverage/
 tests/
 **/*.test.tsx
 **/*.test.ts

@@ -3,6 +3,8 @@
 .eslintcache
 public
 *.css
+**/dist/*
+**/coverage/*
 
 package-lock.json
 pnpm-lock.yaml
